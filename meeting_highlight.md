@@ -8,6 +8,14 @@
 - 以差值(diff)去趨勢、使得 ACF (autocorrelation function) 展現低記憶效應($t_{n=i}$ 與 $t_{n=i-1, i-2, ...}$的關連性隨$n$增加很快地降低)
 - 取 $\log$
 
+Time shift
+- use ACF (AutoCorrelation Function) to decide $t_{i, i=-1,-2, \text{or }?...}$
+
+
+### Granger Causality test
+Check whether a feature (e.g., precipitation) is a effective "cause"
+- for precipitation, yes
+- `soil_water_content_t-1` seems not able to predict `soil_water_content_t0`
 
 ### ideas or keywords that may or may not be helpful
 - Confusion Matrix & Statistics: To see the importance of features (factors)
@@ -20,3 +28,28 @@
 - use AI to find what featrue relates to earthquake
 - AI may support/prove whether final seismic size is deterministic by the first few seconds
 - whether an earthquake is a foreshock of a bigger one
+
+
+# TO-DOs
+TODO: try `SWC_30cm` of site Tower (continue from `decisiontree_20220527/SET_Tower_30cm`)
+TODO: test whether 5-day accumulated precipitation helps prediction in `SWC_30cm`
+
+
+### TODO: Try these features
+- try `no_rain_hour_t0`; test `precipitation_2day` and `precipitation_3day` without time-shift (there seems no requirement to shift them)
+- averaged temperature as input variable
+- wind speed
+- solar radiation
+- use calculated (not observed) `SWC_10cm` as input feature to predict `SWC_30cm`
+
+### TODO: Try model composition
+- one model for absolute SWC nowscast, one for predicting SWC increment
+- one model that learns from the data of the entire year (or season); one for the recent month
+
+### TODO: better imputation
+- it is OK to impute data in testing phase with mean
+- for training dataset, after series to supervised, delete all rows that has missing value; `series2supervise` has to allow missing (or NaN) 
+
+
+### todo: less important
+- record the necessary information about series-to-supervised process that we can restore `Xtrain`,`Xtest`,`ytrain`,`ytest` from input features' name (and its order) from the original data.
