@@ -34,6 +34,9 @@ Check whether a feature (e.g., precipitation) is a effective "cause"
 TODO: try `SWC_30cm` of site Tower (continue from `decisiontree_20220527/SET_Tower_30cm`)
 TODO: test whether 5-day accumulated precipitation helps prediction in `SWC_30cm`
 
+### TODO: For NEXT report
+- plot learning_curve! with number of trees (for random forest); heatmap of performance for two hyper-parameter (e.g. `n_subfeatures` v.s. `bagging_fraction`);see [this](https://juliaai.github.io/DataScienceTutorials.jl/getting-started/ensembles-2/).
+
 
 ### TODO: Try these features
 - try `no_rain_hour_t0`; test `precipitation_2day` and `precipitation_3day` without time-shift (there seems no requirement to shift them)

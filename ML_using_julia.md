@@ -59,6 +59,10 @@ Please read this and the references therein: https://zhuanlan.zhihu.com/p/135898
 
 [The Complete Guide to Decision Tree Analysis (with history)](https://www.explorium.ai/blog/the-complete-guide-to-decision-trees/)
 
+# Algorithm - unsupervised learning
+Resources that might be useful:
+- https://juliaai.github.io/DataScienceTutorials.jl/getting-started/composing-models/#declaring_a_pipeline
+
 # API
 以下是可以用來建立 API 的 julia 套件
 https://github.com/JuliaWeb/HTTP.jl
