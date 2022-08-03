@@ -34,6 +34,10 @@ Check whether a feature (e.g., precipitation) is a effective "cause"
 TODO: try `SWC_30cm` of site Tower (continue from `decisiontree_20220527/SET_Tower_30cm`)
 TODO: test whether 5-day accumulated precipitation helps prediction in `SWC_30cm`
 
+### TODO: For CCC
+He wants to focus on a small dataset (e.g., ARI), tuned the model/overflow to the best, and then extends the model/overflow to a large dataset
+- plot learning curve for subsets of feature selection for ARI dataset; this is intended for CCC. 
+
 ### TODO: For NEXT report
 - plot learning_curve! with number of trees (for random forest); heatmap of performance for two hyper-parameter (e.g. `n_subfeatures` v.s. `bagging_fraction`);see [this](https://juliaai.github.io/DataScienceTutorials.jl/getting-started/ensembles-2/).
 
