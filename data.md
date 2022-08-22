@@ -3,6 +3,7 @@
 ## 氣象坪
 [中大氣象坪資訊](https://docs.google.com/document/d/15_iQngdlKuIoBaQdeyikBd8gIJgmlIbgr2jjm_rM4YE/edit)
 
+## 農試所(共兩種資料來源)
 
 ### 資料來源 (1)
 許家寅--信件(20220527)--<eric880528eric@gmail.com>
@@ -36,6 +37,34 @@
 - 地溫($^\circ C$)
 - 土壤水含量(%)
 
+| 說明 | 變數代號 |
+|---|--|
+| 時間 | datetime                     |
+| 年 | year                         |
+| 月 | month                        |
+| 日 | day                          |
+| 時 | hour                         |
+| 分 | minute                       |
+| 土溫 | soil_temperature_50cm        |
+| 土壤水 | soil_water_content_10cm      |
+| 氣壓 | pressure_G2F820              |
+| 氣溫 | air_temperature_G2F820       |
+| 露點溫度 | dewpoint_temperature_G2F820  |
+| 濕度 | humidity_G2F820              |
+| 平均風速 | windspeed_avg_G2F820         |
+| 最大風速 | windspeed_max_G2F820         |
+| 日照時 | solar_hours_G2F820           |
+| 太陽輻射 | solar_radiation_MJm-2_G2F820 |
+| 蒸發 | evaporation_mm_G2F820        |
+| 降雨 | precipitation                |
+| 時累積雨量 | precipitation_1hr            |
+| 12時累積雨量 | precipitation_12hr           |
+| 1日累積雨量 | precipitation_1d             |
+| 2日累積雨量 | precipitation_2d             |
+| 3日累積雨量 | precipitation_3d             |
+
+
+<div style="page-break-before: always;" />
 
 ## 九份二山
 測站:九份二山(C1I23)
