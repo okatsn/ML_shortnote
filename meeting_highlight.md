@@ -1,3 +1,5 @@
+[TOC]
+
 # Highlight of inside meeting
 
 - 農業需求: 10公尺尺度的土壤溼度預測
@@ -60,3 +62,17 @@ He wants to focus on a small dataset (e.g., ARI), tuned the model/overflow to th
 
 ### todo: less important
 - record the necessary information about series-to-supervised process that we can restore `Xtrain`,`Xtest`,`ytrain`,`ytest` from input features' name (and its order) from the original data.
+
+
+## Log
+#### 2022-08-22
+Highlight
+- the most dominant predictor (i.e., `precipitation_1d_t0`)
+- study relevance between depth and time scale (include time lag & accumulating time)
+- we had debates on coarse graining, and there is still no conclusion yet (and the issue is halt that temporary I need to do nothing)
+
+Insights
+- what if we exclude the most dominant predictor (i.e., `precipitation_1d_t0`)?
+- how does the key features the model (tree) tell us links to parameters in the hydrological model (precipitation as a function of time ↔️ `precipitation_1d_t0`, `_t-1`, `_t-2`...)
+
+
