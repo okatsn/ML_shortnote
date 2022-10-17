@@ -38,9 +38,6 @@ Check whether a feature (e.g., precipitation) is a effective "cause"
 TODO: try `SWC_30cm` of site Tower (continue from `decisiontree_20220527/SET_Tower_30cm`)
 TODO: test whether 5-day accumulated precipitation helps prediction in `SWC_30cm`
 
-### TODO: For CCC
-He wants to focus on a small dataset (e.g., ARI), tuned the model/overflow to the best, and then extends the model/overflow to a large dataset
-- plot learning curve for subsets of feature selection for ARI dataset; this is intended for CCC. 
 
 ### TODO: For NEXT report
 - plot learning_curve! with number of trees (for random forest); heatmap of performance for two hyper-parameter (e.g. `n_subfeatures` v.s. `bagging_fraction`);see [this](https://juliaai.github.io/DataScienceTutorials.jl/getting-started/ensembles-2/).
@@ -52,18 +49,6 @@ He wants to focus on a small dataset (e.g., ARI), tuned the model/overflow to th
 - wind speed
 - solar radiation
 - use calculated (not observed) `SWC_10cm` as input feature to predict `SWC_30cm`
-
-### TODO: Try model composition
-- one model for absolute SWC nowscast, one for predicting SWC increment
-- one model that learns from the data of the entire year (or season); one for the recent month
-
-### TODO: better imputation
-- it is OK to impute data in testing phase with mean
-- for training dataset, after series to supervised, delete all rows that has missing value; `series2supervise` has to allow missing (or NaN) 
-
-
-### todo: less important
-- record the necessary information about series-to-supervised process that we can restore `Xtrain`,`Xtest`,`ytrain`,`ytest` from input features' name (and its order) from the original data.
 
 
 ## Log
@@ -90,10 +75,19 @@ Insights
 - 根據輻射、濕度、風速等推算蒸發散
 - 建立在無雨的狀況假設下
 
-##### Tolerance
+##### Tolerance ("5% 假設")
 "猜錯的話可撐多久"：預測誤差的水量在實際應用場景的緩衝時間是多少
 - 假設以下場景：SWC 低至20% 再澆水；15% 開始枯死；5% 水量可供稻米用5天。目前預測值是25%，真值20%，那容許度為5天。(大概是這樣的感覺)
 - 之前定陳沛芫老師訂定的 "目標誤差低於5%" 就是在這個邏輯下計算得到的。
+
+"5% 假設"的基礎 (陳沛芫/line/2022-10-15)
+- 假設草地每天蒸發散量是5mm
+- 若最嚴重情況下，土壤水份只剩凋萎點以上5mm時，預測誤差5%*100mm土厚=5mm，日尺度預測誤差5%即可能避免植物從水份充足至枯萎之上限 ("少一天提早儲水(讓植物不要枯萎)的影響程度"--2022-3-17)
+- 水稻田蒸發散可能每天0.1-6.5mm，6.5mm/土厚假設100mm，日尺度預測誤差6.5%即可能避免作物從水份充足至枯萎之上限
+
+前述基礎的外推 (陳建志/line/2022-10-15)
+- 深度10 cm ，預測誤差 3% (SWC) 則大約兩天該澆灌沒澆灌之容忍期。
+- 日尺度: 一日的澆灌作業容忍期
 
 ##### 點子
 - 目標預測 $t_{+n}$ SWC。
