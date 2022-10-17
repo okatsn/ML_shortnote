@@ -62,6 +62,34 @@ Insights
 - what if we exclude the most dominant predictor (i.e., `precipitation_1d_t0`)?
 - how does the key features the model (tree) tell us links to parameters in the hydrological model (precipitation as a function of time ↔️ `precipitation_1d_t0`, `_t-1`, `_t-2`...)
 
+#### 2022-09-12 For publication to a journal 
+
+Solely from data, the tree structures (statistics of node labels) can tell the mechanism of physical world
+- the link between trained trees and the existing soil-hydrological model
+- e.g., If `X_t0`, `X_t-1` are dominant at nodes close to the root, we may expect the differentiation of `X` is critical to a soil-hydrological model.
+- can the tree structures tells something more beyond existing model?
+
+Does a tree that performs bad in testing have a unreasonable/illed tree structure?
+Does a tree of bad performance in testing have a different statistics of node labels comparing with a tree of good performance?
+At the depth of 10cm, root label is dominant by `precipitation_1d`; can we see the result from those at depth of 100cm that root label is dominant by `precipitation_more_than_1d`?
+
+According to the learning curve of feature sets based on ARI data, depth of 50cm is clearly a transition that MAE at every feature set (#1 to #12) is almost the same. Does this implies that there is a physical boundary at 50cm?
+- [ ] ask 許家寅 for the core.
+
+Guidelines (move to the manuscript repository)
+- 以圖和表格整理盤點既有成果
+- 先就資料完整的部分準備文章
+- 截至目前為止，僅討論時間面。空間維度(深度)相關方面皆未涉。
+
+Do-it-later
+- 資料缺失與否的影響分析
+
+Also see
+- TWAI土壤水內部_吳宗羲_20220818_007Af.pptx
+
+
+
+
 
 #### 2022-10-12
 ##### 期中報告審查要點
