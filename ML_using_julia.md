@@ -59,6 +59,11 @@ Please read this and the references therein: https://zhuanlan.zhihu.com/p/135898
 
 [The Complete Guide to Decision Tree Analysis (with history)](https://www.explorium.ai/blog/the-complete-guide-to-decision-trees/)
 
+## LSTM using Julia
+[Basic Sentiment Analysis with Julia using LSTM](https://emoryraphael.medium.com/basic-sentiment-analysis-with-julia-using-lstm-e12d4754ee6b)
+
+[Flux.jl: Recurrent Models](https://fluxml.ai/Flux.jl/stable/models/recurrence/)
+
 # Algorithm - unsupervised learning
 Resources that might be useful:
 - https://juliaai.github.io/DataScienceTutorials.jl/getting-started/composing-models/#declaring_a_pipeline
